@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Financial News"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/news_title"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoStart="true"
+        android:flipInterval="2000"
+        android:inAnimation="@anim/push_up_in"
+        android:outAnimation="@anim/push_up_out" >
+        <include layout="@layout/news_one" />
+        <include layout="@layout/news_two" />
+        <include layout="@layout/news_three" />
+        <include layout="@layout/news_four"/>
+    </ViewFlipper>
+
+    <TextView
+        android:layout_marginTop="114dp"
+        android:text="Exchange Calculator"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_calculator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:textColor="#ffffff"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <EditText
+        android:id="@+id/cad_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:background="#000055"
+        android:fontFamily="sans-serif"
+        android:hint="CAD input amount"
+        android:inputType="number"
+        android:digits="1234567890."
+        android:textColor="#FF0000"/>
+
+    <EditText
+        android:id="@+id/rmb_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:background="#000055"
+        android:fontFamily="sans-serif"
+        android:hint="RMB input amount"
+        android:inputType="number"
+        android:digits="1234567890."
+        android:textColor="#FFBB00"/>
+
+    <EditText
+        android:id="@+id/usd_calculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:background="#000055"
+        android:fontFamily="sans-serif"
+        android:hint="USD  input amount"
+        android:inputType="number"
+        android:digits="1234567890."
+        android:textColor="#00ffff"/>
+
+    <include
+        android:id="@+id/rl_error_item"
+        android:visibility="gone"
+        layout="@layout/layout_index_neterror" />
+
+</LinearLayout>
